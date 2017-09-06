@@ -1,0 +1,222 @@
+/*=========== Start of General Rule ===========*/
+/*reset default styles*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;  /*This is to avoid overflowing of elements*/
+}
+
+nav {
+	background-color: lightyellow;
+	height: 100%;
+	width: 200px;
+	position: fixed;
+}
+
+main {
+	background-color: lightgray;
+	margin-left: 200px;
+}
+
+.banner {
+	background-color: skyblue;
+	/*background-image: url('../cool-background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;*/
+	height: 700px;
+	position: relative; /*partner "position: absolute;" on .box*/
+}
+
+.about {
+	background-color: indianred;
+	/*height: 700px;*/
+	min-height: 300px;
+}
+
+.services {
+	background-color: #8CD867;
+	/*height: 300px;*/
+	min-height: 300px;
+}
+
+.projects {
+	background-color: #EF2D56;
+	/*height: 300px;*/
+	min-height: 300px;
+}
+
+.gallery {
+	background-color: #ED7D3A;
+	/*height: 400px;*/
+	min-height: 400px;
+}
+
+footer {
+	background-color: lightgreen;
+	/*height: 50px;*/
+	min-height: 50px;
+}
+
+nav,
+.banner,
+.about,
+.services,
+.projects,
+footer, 
+.gallery {
+	padding: 30px;
+}
+
+.logo {
+	width: 140px;
+	height: 140px;
+	background-color: grey;
+	margin: 0 auto; /*centers the element*/
+	margin-bottom: 20px;
+} 
+
+ul > li {
+	list-style: none; /*removes the bullet display by the list items*/
+	background-color: lightblue;
+	margin-bottom: 2px;
+	line-height: 48px; 
+	text-align: center;
+}
+
+ul > li > a {
+	text-decoration: none;
+}
+
+
+.box {
+	border: 5px solid #fff;
+	text-align: center;
+	/*width: 40%;*/
+	padding: 40px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%); /*repositions an element in the horizontal and/or vertical directions*/
+}
+
+.column {
+	border: 1px solid black;
+	width: 31%;
+	float: left;
+	margin-left: 1%;
+	margin-right: 1%;
+	padding: 10px;
+}
+
+.clear:after { /*coventional. code to clear elements*/
+	content: ""; /*content is declared but with empty value*/
+	clear: both;
+	display: block;
+}
+
+img[alt*="Services"] {
+	border: 1px solid white;
+	width: 60px;
+	height: 60px;
+	float: left;
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+img[alt*="Services"] ~ h3 {
+	margin-bottom: 10px;
+}
+
+img[alt*="Services"] ~ p {
+	overflow: hidden; /* Content is clipped, with no scrollbars */
+}
+
+img[alt*="Gallery"] ~ p {
+	overflow: hidden; 
+}
+
+.gallery > .column {
+	width: 23%;
+	margin: 0 1%;
+}
+
+img[alt*="Gallery"] {
+	border: 1px solid black;
+	width: 100%;
+	/*display: block;*/ /*it displays as block even without this property. i dont know why*/
+	height: 100px;
+}
+
+img[alt*=Social] {
+	width: 30px;
+	height: 30px;
+	border: 1px solid black;
+	float: left;
+	display: block;
+	margin-right: 10px;
+}
+
+div.contact {
+	float: right;
+}
+/* End of General Rule */
+
+
+
+
+/*=========== Start of RWD rule ===========*/
+
+/* Mobile */
+@media only screen and (max-width: 400px) {
+	body {
+		background-color: red;
+	}
+
+	nav {
+		position: static;
+		width: 100%
+	}
+
+	main {
+		margin: 0 auto;
+	}
+
+	.services > .column {
+		width: 100%;
+	}
+
+	.gallery > .column {
+		width: 100%;
+	}
+
+
+}
+
+
+
+
+/* Tablet */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+	body {
+		background-color: yellow;
+	}
+
+	.services > .column {
+		width: 100%;
+		float: left;
+	}
+
+	.gallery > .column {
+		width: 48%;
+		float: left;
+	}
+}
+
+
+/* laptop/desktop */
+@media only screen and (min-width: 961px) {
+	body {
+		background-color: blue;
+	}
+}
